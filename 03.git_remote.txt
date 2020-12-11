@@ -1,0 +1,54 @@
+GIT = distributed version control system. Distributed= each developer has a copy of the whole repository on their local machine. Eachcopy is a peer of the other
+
+GITHUB = remote repositoryhosting service for git.GitHub is a web-based Git repository hosting service plus extra feetures
+
+-git clone URL -> Git clone is used to clone a remote repository into a local workspace
+-git config -- global credential.helper cache –> use a credential helper which caches our credentials for a time window of 15 min so that we don't need to enter our password with every interaction
+-git pull -> to update our local repository to reflect changes made in the remote repository (Fast-forward merge)
+
+Work flow:
+0)Create a new repo
+1)git clone "url of repo" -> create a local copy of the repository
+2)input user & pssw
+3)a directory with that name was automatically created for us and now has the working tree of the Repository in it
+4)create a new file
+5)git commit -a -m  "commit message"
+6)git push -> send our changes to that remote repository
+7)input user & pssw
+
+•Using a remote repo:
+(in directory of the repo)
+-git remote -> lists remote repos
+-git remote -v -> List remote repos verbously
+2 URL one for fetch one for push pointing ate the same place, but different protocols es https an http
+-git remote show <name> -> Describes a single remote repo
+-git remote update -> Fetches the most up-to-date objects
+-git branch -r -> have a look at the remote branches that our Git repo is currently tracking
+-git status -> check the status even in remote branches
+-git fetch -> copies the commits done in the remote repository to the remote branches
+git branch -r	Lists remote branches; can be combined with other branch arguments to manage remote branches
+- git merge origin/master -> integrate the branches into our master branch, we can perform a merge operation, which merges the origin/master branch into our local master branch
+-git pull -> sync our local remote branch with the remote repository
+-faetch vs pull =git fetch fetches remote updates but doesn't merge; git pull fetches remote updates and merges.
+
+•Solving conflict:
+-git checkout -b -> create a new brench and check it out
+-open the file and do modifications
+-git commit -a -m 'commit the change'
+Before we merge any of this into the master branch, we want to push this into the remote repo, so that our collaborators can view the code, test it, and let us know if it's ready for merging.
+-git push -u origin refactor
+
+•Rebasing to merging feature branches back into the main trunk of our code:
+-git log --graph --online --all -> hystory of all repo
+-git merge refactor -> merge our branch through a fast forward merge and keep our history linear
+-git push --delete refactor-> to rm the remote branch
+-git branch - refactor-> to rm the local branch
+-git push -> merged the feature branch back into master
+-git rebase namebanch -> This allows Git to do a fast forward merge and keep history linear
+-git rebase refactor -> Move the current branch on top of the refactor branch, this makes debugging easier and prevents three-way merges by transferring the completed work from one branch to another.
+
+•Rebasing to making sure that our commits made in the master branch apply cleanly on top of the current state.
+-git add file.py
+-git rebase --continue
+-git log --graph --online
+-git push

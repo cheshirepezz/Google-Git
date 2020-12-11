@@ -1,0 +1,87 @@
+•BASIC IDEAS:
+-VCS=version control system, it's a time machine keep tracking changes and history of files and dir
+-.git file: database for all che changes
+-Working tree: sand box where we can edit the current version of the file
+TRACKED FILE:
+-Modifications: untracked file can be modif. (toolbox); current state of project
+-Staging area -> mark those change for tracking in the next commit
+-Git dir -> Commit: snapshot of the project is archived;history of all file and changes
+
+•DIFFING FILE:
+-cat file1.py -> visualizzo il file
+-diff file1.py file2.py -> show difference between them 
+(-u can be used to use onother format)
+
+•APPLY CHANGES:
+-diff -u old_file new_file > chage.diff -> write the diff in this file
+patch cpu_usage.py < cpu_usage.diff -> applico le modifiche di diff in cpu_usage
+
+•WORK FLOW:
+1)mkdir scripts (ls -l -> check contents of the directory)
+2)cd scripts
+3)git init
+4)git config -l
+5)create a new file (untracked) file.py
+6)git status -> show modifications and working three
+7)git add file.py -> track the file putting on stage state.
+8)git commit -m "direct commit command"
+9)git log -> display commit messages
+
+•GIT INTERACTIONS:
+-git add -p -> Allows a user to interactively review patches to add to the current commit
+-git status -> check the status of the file
+-git commit -a -> is a shortcut to stage any changes to tracked files and commit them in one step
+If the modified file has never been committed to the repo, we'll still need to use git add to track it first
+-Head -> (alias) pointer to the current branch, it's the snapshot of current commit
+-git log -p -> (patch) history of changes in a repo
+-git log --stat flag -> show some stats about the changes in the commit, like which files were changed and how many lines were added or removed.
+git diff -> show the differences in various commits
+-git diff -- staged -> change staged but not committed
+-git show -> show info about commit and associated patch
+-git rm file -> rm to git repo
+-git mv file1 file2 -> rename
+-git mv file destination -> move
+1-echo .DS_STORE > .gitignore -> file that specify what file ignore in the r
+2-git add .gitignore
+3-git commit -m 'Add a git ignore file, ignoring .DS_STORE files'
+
+•UNDO THINGS:
+-git checkout file -> undo unstaged changes; is effectively used to switch branches
+-git *add -> stage all the file
+-git reset HEAD file -> unstage our staged file: rm changes to the staging area
+-git reset -p -> to get ask by git what specific change to reset.
+-git commit --ammend -> git will take whatever is currently in our staging area and run the git commit workflow to overwrite the previous commit (work only local not work public) 
+-touch file -> create a file
+-git revert -> create a commit which is the inverse of the privious one
+-git revert head-> rewind of the current commit
+-commit ID called Hash, used to guarantee the consistence of data
+-git log -2 -> 2 last commit   
+-git show ID -> review a specific id
+-git revert ID -> point the file and revert it
+
+•BRANCHING AND MERGING:
+-branch = pointer to a particulatr commit, for new developement to try until it works correctly
+-master = default branch, known good state of project
+-branch = pointer to a commit
+-git branch name -> manages thr brenches
+-git branch name_branch -> create a new one
+-git checkout -> updating the working tree to match the selected branch
+-git checkout name_branch -> change branch; the star indicate the current branch
+-git checkout -b new_branch -> create a new branch and swiches to it at once
+-git branch -d branch_name -> delete a branch
+-git merge name_branch -> HEAD poits name_branch a master b at the same time (fast forward merge)
+-git log --graph --oneline -> better visualization
+-git merge --abort -> stop merg and reset to the privious commit
+-git log --graph --oneline -> This shows a summarized view of the commit history for a repo
+
+
+
+
+
+
+
+
+
+
+
+

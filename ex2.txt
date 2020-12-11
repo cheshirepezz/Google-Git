@@ -1,0 +1,76 @@
+•Add a new feature:
+n this section, we'll be modifying the repository to add a new feature, without affecting the current iteration. This new feature is designed to improve the food count (from the file food_count.py) output. So, create a branch named improve-output using the following command:
+
+git branch improve-output
+
+Move to the improve-output branch from the master branch.
+
+git checkout improve-output
+
+Here, you can modify the script file without disturbing the existing code. Once modified and tested, you can update the master branch with a working code.
+Now, open food_count.py in the nano editor using the following command:
+
+nano food_count.py
+
+Add the line below before printing for loop in the food_count.py script:
+
+print("Favourite foods, from most popular to least popular")
+
+Save the file by pressing Ctrl-o, the Enter key, and Ctrl-x. Then run the script food_count.py again to see the output:
+
+./food_count.py
+
+After running the food_count.py script successfully, commit the changes from the improve-output branch by adding this script to the staging area using the following command:
+
+git add food_count.py
+
+Now, commit the changes you've done in the improve-output branch.
+
+git commit -m "Adding a line in the output describing the utility of food_count.py script"
+
+•Fix the script:
+In this section, we'll fix the script food_question.py, which displayed an error when executing it. You can run the file again to view the error.
+
+./food_question.py
+
+This script gives us the error: "NameError: name 'item' is not defined" but your colleague says that the file was running fine before the most recent commit they did.
+
+In this case, we'll revert back the previous commit.
+For this, check the git log history so that you can revert back to the commit where it was working fine.
+
+git log
+
+Here, you'll see the commits in reverse chronological order and find the commit having "Rename item variable to food_item" as a commit message. Make sure to note the commit ID for this particular commit.
+Enter q to exit.
+To revert, use the following command:
+
+git revert [commit-ID]
+
+Replace [commit-ID] with the commit ID you noted earlier.
+This creates a new commit again. You can continue with the default commit message on the screen or add your own commit message.
+Then continue by clicking Ctrl-o, the Enter key, and Ctrl-x.
+Now, run food_question.py again and verify that it's working as intended.
+
+./food_question.py
+
+•Merge operation:
+Before merging the branch improve-output, switch to the master branch from the current branch improve-output branch using the command below:
+
+git checkout master
+
+Merge the branch improve-output into the master branch.
+
+git merge improve-output
+
+Now, all your changes made in the improve-output branch are on the master branch.
+
+./food_question.py
+
+To get the status from the master branch, use the command below:
+
+git status
+
+To track the git commit logs, use the following command:
+
+git log
+

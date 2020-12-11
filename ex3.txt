@@ -1,0 +1,24 @@
+Now, let's create an empty file on the remote repository using the Github website.
+
+1-Go to your repository on the Github website and click on the Create new file button. This will open a new page.
+2-Enter the file's name in the box beside your repository's name. Leave the contents of the file empty.
+3-Scroll down and enter a commit message in the first box under Commit new file section.
+4-Leave the rest on its default value and click the 5-Commit new file button.
+
+You've successfully committed a new file through the website.
+
+Now, let's push the changes made on the local repository that weren't pushed. Switch back to your terminal and enter the following command:
+
+-git push origin master
+
+The last command throws an error. This is because the files added or change done on a remote repository (the Github website) isn't present yet on your local repository, but we're trying to push something from the local repository to the remote repository. To push changes from the local repository, we need to first update the local repository from the remote repository.
+
+Let's now pull the current snapshot/commit in the remote repository to the local repository:
+
+-git pull origin master
+
+This opens an editor that asks you to enter a commit message for the merge operation (remote repository to local repository).
+
+You can simply accept the default message or type your own message. To continue, save the file by pressing Ctrl-o, Enter key, and Ctrl-x.
+
+The git pull command is used to fetch and download content from a remote repository and update the local repository to match that content.

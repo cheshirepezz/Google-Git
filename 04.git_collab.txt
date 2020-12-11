@@ -1,0 +1,36 @@
+•Pull Request:
+-Forking is a way of creating a copy of the given repository so that it belongs to our user. In other words, our user will be able to push changes to the forked copy, even when we can't push changes to the other repo. First, create a fork of the repo, and then work on that local fork.
+-A pull request is a commit or series of commits that you send to the owner of the repository so that they incorporate it into their tree. (only for simple changes) 
+-For bigger changes we have to:
+1)Create a fork on git hub
+2)git clone url -> local copy
+3)git checkout -b add file -> create a brench for the file we want to modify
+3)atom README.md 
+4)git add README.md
+5)git commit -m 'commit'
+6)git push -u origin add-readme ->to push the change to our fork repo we need to create the corresponding remote branch
+7)pull request link in git page, check the code is mearged correctly
+
+-Updating and existing pull request
+-git rebase -i master->single commit that includes both changes and a more detailed description than the one we submitted
+-squash->  the contents of the selected commit are merged into the previous commit in the list, the commit messages are added together and an editor opens up to let us make any necessary changes
+-git push -f -> force git to push the current snapshot into the repo as is (force update)
+-fixup->the contents of the selected commit are merged into the previous commit in the list, the commit message for that commit is discarded
+
+-Code Review=going through someone else's code, documentation or configuration and checking that it all makes sense and follows the expected patterns. It's a way to learn something new.
+
+•Code Review workflow:
+At the end of a big changing we send it to a reviewer and then when he is satisfied we commit the changes.
+
+-A continuous integration system = will build and test our code every time there's a change.  we can automatically run our tests using the code in a pull request. This way, we can verify that the test will pass after the new changes get merged back into the tree and that means instead of hoping our collaborators will remember to properly test their code, we can rely on our automated testing system to do it for us
+-Continuous deployment = means the new code is deployed often. 
+-Pipelines specify the steps that need to run to get the result you want.
+-Artifacts = this is the name used to describe any files that are generated as part of the pipeline.
+
+
+
+
+
+
+
+
