@@ -1,0 +1,31 @@
+0) CLONING A REPOSITORY:
+   * git clone <url> <where to clone>
+   * git remote -v -> info about the repo
+   * git branch -a -> info about the branches
+
+1) CREATE A BRENCH FOR DESIRED FEATURES:
+   * git branch branch_name -> branch creation
+   * git checkout branch_name -> shift to the branch
+
+2) MODIFICATION OF THE CODE
+
+3) COMMIT CHANGES:
+   * git diff -> see modif. on the code
+   * git status -> already push?
+   * git add -A -> add all changes to the staging already
+   * git commit -m "Description of the changes" -> track modifications
+
+4) PUSHING TO REMOTE:
+   * git push -u origin branch_name -> "-u" associate with this branch
+   * git branch -a -> visualise branches
+
+5) MEARGE A BRENCH: when the code is working
+   * git checkout master -> switch to the master branch
+   * git pull origin master -> synchronize remote with local
+   * git branch --merged -> information about what we got
+   * git merge branch_name -> merge branch_name in master (local)
+   * git push origin master -> push changes to remote
+
+6) DELETE THE BRANCH:
+   * git branch -d -> delete branch locally
+   * git push origin --delete branch_name
