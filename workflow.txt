@@ -7,7 +7,7 @@
    * git branch branch_name -> branch creation
    * git checkout branch_name -> shift to the branch
 
-2) MODIFICATION OF THE CODE
+2) CODE MODIFICATION
 
 3) COMMIT CHANGES:
    * git diff -> see modif. on the code
