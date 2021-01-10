@@ -3,7 +3,7 @@
    * git remote -v -> info about the repo
    * git branch -a -> info about the branches
 
-1) CREATE A BRENCH FOR DESIRED FEATURES:
+1) CREATE A BRANCH FOR DESIRED FEATURES:
    * git branch branch_name -> branch creation
    * git checkout branch_name -> shift to the branch
 
@@ -19,7 +19,7 @@
    * git push -u origin branch_name -> "-u" associate with this branch
    * git branch -a -> visualise branches
 
-5) MEARGE A BRENCH: when the code is working
+5) MEARGE A BRANCH: when the code is working
    * git checkout master -> switch to the master branch
    * git pull origin master -> synchronize remote with local
    * git branch --merged -> information about what we got
